@@ -1,7 +1,4 @@
 provider "aws" {
-access_key = "${var.AWS_ACCESS_KEY}"
-secret_key = "${var.AWS_SECRET_KEY}"
-region = "${var.AWS_REGION}"
 }
 
 resource "aws_instance" "web" {
@@ -9,7 +6,7 @@ ami = "${var.ami}"
 instance_type = "${var.instance_type}"
 
 tags = {
-Name = "ubuntu"
+Name = "${var.name}"
 }
 
 }
